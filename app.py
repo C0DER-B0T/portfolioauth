@@ -56,6 +56,15 @@ def invite_to_repo(username):
     return response.status_code in [201, 204] # 201 Created, 204 Already a collaborator
 
 # --- UI & LOGIC ---
+
+video_file = open("lv_0_20260318165655.mp4", "rb")
+video_bytes = video_file.read()
+st.subheader("Portfolio Preview")
+st.video(video_bytes)
+
+
+
+
 st.set_page_config(page_title="Unlock Assignments", page_icon="⭐")
 
 st.title("Unlock the Portfolio Source Code")
@@ -88,7 +97,7 @@ if "code" in query_params:
                                 st.balloons()
                                 st.success("🎉 **Success!** You have been invited to the private repository.")
                             
-                                st.markdown(f'<a href="https://github.com/{PRIVATE_REPO}"><button style="background-color:#FF0000; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Click here to Access the Source Code</button></a>', unsafe_allow_html=True)
+                                st.markdown(f'<a href="https://github.com/{PRIVATE_REPO}"><button style="background-color:#FF0000;  color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Click here to Access the Source Code</button></a>', unsafe_allow_html=True)
 
                                 st.info("Check your email or your GitHub notifications to accept the invitation.")
                             else:
